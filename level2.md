@@ -30,7 +30,7 @@ Don't bother try "121111117999711010497122979999101122122" as the password, beca
 
 So what can we gather from this javascript?
 The password is lower case:
-```var secret = login.secret.value.toLowerCase()```        
+```var secret = login.secret.value.toLowerCase()```
 Each character you write as password will be converted to ascii decimal:
 ```
 for (var i = 0; i < secret.length; i++) {
@@ -43,9 +43,11 @@ Because lower case characters begin at 97, then we can separate the numbers like
 
 Here is a php script that reverses what the javascript does by converting the ascii numbers to characters:
 ```php
+<?php
 foreach(explode(" ", "121 111 117 99 97 110 104 97 122 97 99 99 101 122 122") as $s) {
     print chr($s);
 }
+?>
 ```
 
 Output:
